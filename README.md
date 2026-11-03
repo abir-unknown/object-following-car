@@ -1,71 +1,122 @@
 # Object Following Car 🚗
 
-An Arduino-based autonomous robot car that detects and follows an object using ultrasonic and infrared sensors.
+An autonomous robot car built using Arduino Uno, ultrasonic and infrared sensors. The car detects and follows an object automatically using sensor-based movement control.
 
-## 🔧 Components Used
+## Project Overview
 
-- Arduino Uno R3
-- L293D Motor Driver Shield
-- HC-SR04 Ultrasonic Sensor
-- FC-51 IR Sensors (2)
-- SG90 Servo Motor
-- 4 DC Gear Motors
-- 18650 Li-ion Batteries
-- 4-Wheel Robot Chassis
+The main goal of this project is to develop a four-wheel robot car that can detect and follow an object placed in front of it.
 
-## ⚙️ Working Principle
+The Arduino reads sensor data and controls the motors through an L293D Motor Driver Shield.
 
-1. The ultrasonic sensor measures the distance to the object.
-2. Two IR sensors detect objects on the left and right.
-3. The Arduino processes the sensor readings.
-4. The motor driver controls the four DC motors.
-5. The car follows the object when it is within the specified distance.
-6. The car stops when the object moves outside the following range.
+## Features
 
-## 💻 Technologies Used
+- Automatic object detection
+- Object following using ultrasonic distance measurement
+- Left and right detection using IR sensors
+- Automatic forward, left and right movement
+- Automatic stopping when the object is out of range
+- Four-wheel DC motor control
+
+## Hardware Components
+
+| Component | Quantity |
+|---|---:|
+| Arduino Uno R3 | 1 |
+| L293D Motor Driver Shield | 1 |
+| HC-SR04 Ultrasonic Sensor | 1 |
+| FC-51 IR Sensor | 2 |
+| SG90 Servo Motor | 1 |
+| DC Gear Motors | 4 |
+| 18650 Li-ion Batteries | 2 |
+| Four-wheel chassis | 1 |
+| Jumper Wires | As required |
+
+## Technologies Used
 
 - Arduino IDE
 - C/C++
 - Embedded Systems
-- Sensor Interfacing
 - Robotics
+- Sensor Interfacing
 
-## 📂 Project Structure
+## Working Principle
+
+1. The HC-SR04 ultrasonic sensor measures the distance to the object.
+2. Two FC-51 IR sensors detect objects on the left and right sides.
+3. Arduino Uno processes the sensor readings.
+4. The L293D Motor Driver Shield controls the four DC motors.
+5. The car moves forward when an object is detected within 1–15 cm.
+6. The car turns left or right based on the IR sensor readings.
+7. The car stops when the object is outside the following range.
+
+## Pin Connections
+
+| Device | Arduino Pin |
+|---|---|
+| Ultrasonic Trigger | A1 |
+| Ultrasonic Echo | A0 |
+| Right IR Sensor | A2 |
+| Left IR Sensor | A3 |
+| SG90 Servo Signal | D10 |
+| Motor 1 | Shield M1 |
+| Motor 2 | Shield M2 |
+| Motor 3 | Shield M3 |
+| Motor 4 | Shield M4 |
+
+## Required Arduino Libraries
+
+- NewPing
+- Servo
+- AFMotor
+
+## Project Structure
 
 ```text
 object-following-car/
+├── README.md
+├── .gitignore
+├── LICENSE
 ├── src/
 │   └── object_following_car.ino
-├── images/
 ├── docs/
-└── README.md
+│   ├── project-report.tex
+│   └── project-report.pdf
+└── images/
+    ├── project-car.jpg
+    ├── circuit-diagram.png
+    └── block-diagram.png
 ```
 
-## 👨‍💻 Project Team
+## Project Team
 
-- Abir
-- Arif
-- Mamun
-- Shanto
-- Plaboni
-- Nasifa
-- Azhar
+1. Abir
+2. Arif
+3. Mamun
+4. Shanto
+5. Plaboni
+6. Nasifa
+7. Azhar
 
-## 🎓 Academic Project
+## Academic Information
 
-Department of Computer Science and Engineering  
-Sylhet International University
+**Institution:** Sylhet International University
 
-Course: Electronic Devices and Circuits
+**Department:** Computer Science and Engineering
 
-## 🚀 Future Improvements
+**Course:** Electronic Devices and Circuits
+
+**Project Title:** Object Following Car
+
+**Submission Date:** 03 November 2026
+
+## Future Improvements
 
 - PID-based movement control
-- Bluetooth/Wi-Fi control
+- Bluetooth and Wi-Fi connectivity
 - Camera-based object tracking
-- Obstacle avoidance
+- Improved obstacle avoidance
+- Battery level monitoring
 
----
+## License
 
-**Project:** Object Following Car  
-**Year:** 2026
+This project is intended for educational and academic purposes.
